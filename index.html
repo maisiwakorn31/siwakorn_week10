@@ -1,9 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <title>Hello</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hello - My Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, "Noto Sans Thai", sans-serif;
+            min-height: 100vh;
+            color: white;
+            background: #0f172a;
+        }
+
+        /* Background */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+
+            background:
+                radial-gradient(circle at top left, #6366f1 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ec4899 0%, transparent 35%),
+                #0f172a;
+        }
+
+        /* Glass Card */
+        .card {
+            width: 100%;
+            max-width: 700px;
+            padding: 60px 40px;
+
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 30px;
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+
+            animation: fadeIn 1s ease;
+        }
+
+        .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: clamp(40px, 8vw, 75px);
+            margin-bottom: 15px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #c4b5fd,
+                #f9a8d4
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #cbd5e1;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 30px;
+
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+
+            border-radius: 50px;
+
+            background: linear-gradient(
+                135deg,
+                #6366f1,
+                #ec4899
+            );
+
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(236, 72, 153, 0.45);
+        }
+
+        .footer {
+            margin-top: 35px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .card {
+                padding: 45px 25px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello siwakorn</h1>
+
+    <section class="hero">
+
+        <div class="card">
+
+            <div class="icon">👋</div>
+
+            <!-- เปลี่ยนชื่อด้านล่างเป็นชื่อของคุณ -->
+            <h1>Hello Somchai</h1>
+
+            <p class="subtitle">
+                Welcome to my website ✨<br>
+                เว็บไซต์ Static Site ของฉัน
+            </p>
+
+            <a href="#" class="button">
+                Welcome 🚀
+            </a>
+
+            <div class="footer">
+                Created with HTML & CSS • GitHub Pages
+            </div>
+
+        </div>
+
+    </section>
+
 </body>
 </html>
