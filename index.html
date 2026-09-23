@@ -1,181 +1,167 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Hello - My Website</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, "Noto Sans Thai", sans-serif;
-            min-height: 100vh;
-            color: white;
-            background: #0f172a;
-        }
-
-        /* Background */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 30px;
-
-            background:
-                radial-gradient(circle at top left, #6366f1 0%, transparent 35%),
-                radial-gradient(circle at bottom right, #ec4899 0%, transparent 35%),
-                #0f172a;
-        }
-
-        /* Glass Card */
-        .card {
-            width: 100%;
-            max-width: 700px;
-            padding: 60px 40px;
-
-            background: rgba(255, 255, 255, 0.10);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 30px;
-
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-
-            animation: fadeIn 1s ease;
-        }
-
-        .icon {
-            font-size: 60px;
-            margin-bottom: 20px;
-            animation: floating 3s ease-in-out infinite;
-        }
-
-        h1 {
-            font-size: clamp(40px, 8vw, 75px);
-            margin-bottom: 15px;
-
-            background: linear-gradient(
-                90deg,
-                #ffffff,
-                #c4b5fd,
-                #f9a8d4
-            );
-
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            color: #cbd5e1;
-            margin-bottom: 35px;
-            line-height: 1.7;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 14px 30px;
-
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-
-            border-radius: 50px;
-
-            background: linear-gradient(
-                135deg,
-                #6366f1,
-                #ec4899
-            );
-
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
-
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(236, 72, 153, 0.45);
-        }
-
-        .footer {
-            margin-top: 35px;
-            font-size: 14px;
-            color: #94a3b8;
-        }
-
-        /* Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes floating {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* Mobile */
-        @media (max-width: 600px) {
-            .card {
-                padding: 45px 25px;
-            }
-
-            .subtitle {
-                font-size: 17px;
-            }
-        }
-    </style>
+    <title>Professional Resume - Siwakorn Pratumsuwan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased print:bg-white print:text-black">
 
-<body>
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto my-8 bg-white shadow-xl rounded-2xl overflow-hidden print:shadow-none print:m-0 print:rounded-none">
+        
+        <!-- Header / Hero Section -->
+        <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white p-8 md:p-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div>
+                    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">John Doe</h1>
+                    <p class="text-xl md:text-2xl text-blue-200 font-medium mt-1">Senior Full Stack Developer</p>
+                </div>
+                <div class="flex flex-col gap-2 text-sm text-blue-100">
+                    <a href="mailto:john.doe@example.com" class="hover:text-white flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-envelope w-5"></i> john.doe@example.com
+                    </a>
+                    <a href="tel:+1234567890" class="hover:text-white flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-phone w-5"></i> +1 (234) 567-890
+                    </a>
+                    <span class="flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot w-5"></i> San Francisco, CA
+                    </span>
+                    <a href="https://linkedin.com" target="_blank" class="hover:text-white flex items-center gap-2 transition-colors">
+                        <i class="fa-brands fa-linkedin w-5"></i> linkedin.com/in/johndoe
+                    </a>
+                </div>
+            </div>
+        </header>
 
-    <section class="hero">
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 p-8 md:p-12 gap-10">
+            
+            <!-- Left Column (Skills, Education, Languages) -->
+            <aside class="md:col-span-1 space-y-8">
+                
+                <!-- About Me / Summary -->
+                <section>
+                    <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wider border-b-2 border-blue-600 pb-2 mb-4">Profile</h2>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Innovative and detail-oriented Full Stack Developer with 6+ years of experience designing, developing, and deploying robust web applications. Passionate about clean code, modern JavaScript frameworks, and high-performance system architecture.
+                    </p>
+                </section>
 
-        <div class="card">
+                <!-- Technical Skills -->
+                <section>
+                    <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wider border-b-2 border-blue-600 pb-2 mb-4">Skills</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">JavaScript (ES6+)</span>
+                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">TypeScript</span>
+                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">React.js</span>
+                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">Node.js</span>
+                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">Python</span>
+                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">PostgreSQL</span>
+                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">Docker</span>
+                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">Tailwind CSS</span>
+                        <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">Git / CI/CD</span>
+                    </div>
+                </section>
 
-            <div class="icon">👋</div>
+                <!-- Education -->
+                <section>
+                    <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wider border-b-2 border-blue-600 pb-2 mb-4">Education</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-sm">B.S. in Computer Science</h3>
+                            <p class="text-xs text-blue-600 font-medium">University of California, Berkeley</p>
+                            <p class="text-xs text-slate-500">Graduated: May 2018</p>
+                        </div>
+                    </div>
+                </section>
 
-            <!-- เปลี่ยนชื่อด้านล่างเป็นชื่อของคุณ -->
-            <h1>Hello Siwakorn</h1>
+                <!-- Languages -->
+                <section>
+                    <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wider border-b-2 border-blue-600 pb-2 mb-4">Languages</h2>
+                    <ul class="text-sm space-y-2 text-slate-600">
+                        <li class="flex justify-between"><span>English</span> <span class="text-slate-400 font-medium">Native</span></li>
+                        <li class="flex justify-between"><span>Spanish</span> <span class="text-slate-400 font-medium">Professional</span></li>
+                    </ul>
+                </section>
 
-            <p class="subtitle">
-                Welcome to my website ✨<br>
-                เว็บไซต์ Static Site ของฉัน
-            </p>
+            </aside>
 
-            <a href="#" class="button">
-                Welcome 🚀
-            </a>
+            <!-- Right Column (Experience, Projects) -->
+            <div class="md:col-span-2 space-y-8">
+                
+                <!-- Work Experience -->
+                <section>
+                    <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wider border-b-2 border-blue-600 pb-2 mb-6">Work Experience</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Job 1 -->
+                        <div class="relative pl-6 border-l-2 border-slate-200">
+                            <div class="absolute -left-[7px] top-1.5 w-3 h-3 bg-blue-600 rounded-full"></div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-1">
+                                <h3 class="font-bold text-slate-800 text-base">Senior Full Stack Engineer</h3>
+                                <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">2021 – Present</span>
+                            </div>
+                            <p class="text-xs font-medium text-blue-600 mb-2">TechCorp Solutions • San Francisco, CA</p>
+                            <ul class="text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                                <li class="leading-relaxed">Led a cross-functional team of 5 developers to rebuild the core SaaS platform, increasing user retention by 24%.</li>
+                                <li class="leading-relaxed">Architected scalable REST APIs using Node.js and Express, cutting average response time down by 35%.</li>
+                                <li class="leading-relaxed">Mentored junior developers and instituted rigorous code review standards using TypeScript and Jest.</li>
+                            </ul>
+                        </div>
 
-            <div class="footer">
-                Created with HTML & CSS • GitHub Pages
+                        <!-- Job 2 -->
+                        <div class="relative pl-6 border-l-2 border-slate-200">
+                            <div class="absolute -left-[7px] top-1.5 w-3 h-3 bg-slate-300 rounded-full"></div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-1">
+                                <h3 class="font-bold text-slate-800 text-base">Frontend Web Developer</h3>
+                                <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-1 rounded">2018 – 2021</span>
+                            </div>
+                            <p class="text-xs font-medium text-blue-600 mb-2">WebCraft Digital • Austin, TX</p>
+                            <ul class="text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                                <li class="leading-relaxed">Developed responsive, high-fidelity web applications using React, Redux, and Tailwind CSS.</li>
+                                <li class="leading-relaxed">Optimized legacy client websites for SEO and accessibility (WCAG 2.1), resulting in top-tier Google Lighthouse scores.</li>
+                                <li class="leading-relaxed">Collaborated closely with UI/UX designers to translate Figma design tokens into clean, modular components.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Featured Projects -->
+                <section>
+                    <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wider border-b-2 border-blue-600 pb-2 mb-6">Key Projects</h2>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 hover:border-blue-300 transition-colors">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="font-bold text-slate-800 text-sm">DevFlow - Project Management Tool</h3>
+                                <span class="text-xs text-blue-600 font-medium">React, Node.js, PostgreSQL</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Built a real-time kanban board application supporting live team updates via WebSockets, drag-and-drop task management, and comprehensive project analytics.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 hover:border-blue-300 transition-colors">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="font-bold text-slate-800 text-sm">EcoTrack Carbon Footprint Dashboard</h3>
+                                <span class="text-xs text-blue-600 font-medium">Vue.js, Python, Chart.js</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Developed an interactive analytics dashboard allowing users to track daily carbon emissions with automated data visualizations and reduction goal-setting features.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
             </div>
 
         </div>
 
-    </section>
+    </main>
 
 </body>
 </html>
